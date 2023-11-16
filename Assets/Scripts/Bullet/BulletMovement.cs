@@ -8,6 +8,8 @@ public class BulletMovement : MonoBehaviour
 
     [SerializeField]
     private int speed;
+
+    private GameObject Weapon;
     public int Speed // Bullet Movement Speed Get Property
     {
         get { return speed; }
@@ -28,7 +30,8 @@ public class BulletMovement : MonoBehaviour
 
     private void Movement()
     {
-        bulletRb.AddForce(Vector2.right * speed, ForceMode2D.Impulse);
+        Weapon = GameObject.Find("Weapon");
+        bulletRb.AddForce(Weapon.transform.right * speed, ForceMode2D.Impulse);
     }
 
     private void OnBecameInvisible()
