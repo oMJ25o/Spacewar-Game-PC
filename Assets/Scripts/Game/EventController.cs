@@ -9,6 +9,7 @@ public class EventController : MonoBehaviour
 
     public event Action onPlayerRoll;
     public event Action onPlayerRotate;
+    public event Action<int> onEnemyHit;
 
     void Awake()
     {
@@ -36,4 +37,13 @@ public class EventController : MonoBehaviour
             onPlayerRotate();
         }
     }
+
+    public void EnemyHit(int dmg)
+    {
+        if (onEnemyHit != null)
+        {
+            onEnemyHit(dmg);
+        }
+    }
+
 }

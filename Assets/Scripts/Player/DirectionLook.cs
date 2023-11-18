@@ -20,22 +20,6 @@ public class DirectionLook : MonoBehaviour
     // Player change look direction based on the A/D input actions
     private void LookDirection()
     {
-        // Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // Vector3 lookDirection = mousePos - transform.position;
-        // float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-
-        // if (mousePos.x > gameObject.transform.position.x)
-        // {
-        //     GetComponent<SpriteRenderer>().flipX = false;
-        //     EventController.current.PlayerRotate();
-        // }
-        // else
-        // {
-        //     GetComponent<SpriteRenderer>().flipX = true;
-        //     EventController.current.PlayerRotate();
-        // }
-
         // Get the current mouse position in screen coordinates
         Vector3 mousePosition = Input.mousePosition;
 

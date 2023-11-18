@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5491608478399256936}
   - component: {fileID: 2774424403335927903}
+  - component: {fileID: -7291924460933941342}
   - component: {fileID: -1012845159511665232}
   - component: {fileID: -5604432601232533682}
   - component: {fileID: 1429179555341040490}
   - component: {fileID: 5176517660292315936}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Purple Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -88,6 +89,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7291924460933941342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651200555231480968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d4ddb2859b20f45a296138b8712d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 49d40503dfbff474e9971c66136ce4af, type: 2}
 --- !u!114 &-1012845159511665232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,8 +124,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
-  m_Acceleration: 25
+  m_Speed: 7
+  m_Acceleration: 20
   avoidancePriority: 1
   m_AngularSpeed: 120
   m_StoppingDistance: 0

@@ -26,6 +26,7 @@ public class FollowPlayer : MonoBehaviour
 
     private void Follow()
     {
+        // Smoothly move the camera's position towards the player's position
         transform.position = Vector3.SmoothDamp(new Vector3(transform.position.x, transform.position.y, zPosSet), player.transform.position, ref velocity, damping);
     }
 

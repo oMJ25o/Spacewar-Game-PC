@@ -31,11 +31,11 @@ public class BulletMovement : MonoBehaviour
     private void Movement()
     {
         Weapon = GameObject.Find("Weapon");
-        bulletRb.AddForce(Weapon.transform.right * speed, ForceMode2D.Impulse);
+        bulletRb.AddForce(Weapon.transform.right * speed, ForceMode2D.Impulse); // Instant force towards the target point
     }
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        Destroy(gameObject); // Destroy this game object when it reaches outside the player's screen
     }
 }

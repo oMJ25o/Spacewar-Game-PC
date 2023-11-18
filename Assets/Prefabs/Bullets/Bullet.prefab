@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6899150248715674224}
   - component: {fileID: 408285859290921622}
-  - component: {fileID: 4705256998388977014}
   - component: {fileID: -7833871613968587038}
+  - component: {fileID: 4705256998388977014}
   - component: {fileID: 5286709026727909647}
   - component: {fileID: 2480323721126123150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -88,6 +88,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7833871613968587038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934084791883636944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d7f93b1c6349142bf4fd96cb1f1d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletData: {fileID: 11400000, guid: 8a91b9d5724fb30488d691e7cf71c15d, type: 2}
 --- !u!114 &4705256998388977014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,18 +115,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletRb: {fileID: 5286709026727909647}
   speed: 35
---- !u!114 &-7833871613968587038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2934084791883636944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40d7f93b1c6349142bf4fd96cb1f1d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &5286709026727909647
 Rigidbody2D:
   serializedVersion: 4
