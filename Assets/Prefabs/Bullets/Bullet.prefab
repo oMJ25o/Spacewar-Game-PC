@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6899150248715674224}
   - component: {fileID: 408285859290921622}
   - component: {fileID: 4705256998388977014}
+  - component: {fileID: -7833871613968587038}
   - component: {fileID: 5286709026727909647}
   - component: {fileID: 2480323721126123150}
   m_Layer: 0
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 7a24a4a98393b194d9d5b2fe487a542f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aad98e01cfd0a8940a512f8b7cc58500, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 20.48, y: 20.48}
+  m_Size: {x: 12.06, y: 12.06}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -100,7 +101,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletRb: {fileID: 5286709026727909647}
-  speed: 110
+  speed: 35
+--- !u!114 &-7833871613968587038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934084791883636944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d7f93b1c6349142bf4fd96cb1f1d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &5286709026727909647
 Rigidbody2D:
   serializedVersion: 4
@@ -157,7 +170,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.076132774}

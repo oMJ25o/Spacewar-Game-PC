@@ -6,6 +6,9 @@ public class FollowPlayer : MonoBehaviour
 {
     private GameObject player;
     private int zPosSet = -10;
+    public float damping;
+
+    private Vector3 velocity = Vector3.zero;
     // Finds the player game object at the start of the game scene
     void Awake()
     {
@@ -23,7 +26,7 @@ public class FollowPlayer : MonoBehaviour
 
     private void Follow()
     {
-        gameObject.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, zPosSet);
+        transform.position = Vector3.SmoothDamp(new Vector3(transform.position.x, transform.position.y, zPosSet), player.transform.position, ref velocity, damping);
     }
 
 }

@@ -38,7 +38,7 @@ public class SpawnManager : MonoBehaviour
 
     private void RandomLocation()
     {
-        xOffSet = Random.Range(-100, 101);
+        xOffSet = Random.Range(-25, 25);
 
         if (xOffSet <= 81)
         {
@@ -46,16 +46,16 @@ public class SpawnManager : MonoBehaviour
             switch (verticalSpawn)
             {
                 case 1:
-                    yOffSet = Random.Range(60, 71);
+                    yOffSet = Random.Range(13, 20);
                     return;
                 case 2:
-                    yOffSet = Random.Range(-60, -71);
+                    yOffSet = Random.Range(-13, -20);
                     return;
             }
         }
         else
         {
-            yOffSet = Random.Range(60, -71);
+            yOffSet = Random.Range(20, -20);
         }
     }
 

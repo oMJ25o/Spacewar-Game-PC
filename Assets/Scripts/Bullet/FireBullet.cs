@@ -16,7 +16,7 @@ public class FireBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && firePoint != null)
+        if (Input.GetMouseButtonDown(0) && firePoint != null)
         {
             SpawnBullet();
         }
