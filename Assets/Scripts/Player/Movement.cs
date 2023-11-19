@@ -10,6 +10,10 @@ public class Movement : MonoBehaviour
     private int moveSpeed;
     private int rollSpeed = 1;
 
+    // To-Do
+    // Make a different class for picking up weapons
+    // Pistol will be the permanent weapon
+
     public int MoveSpeed // Get and Set property for movement speed
     {
         get { return moveSpeed; }

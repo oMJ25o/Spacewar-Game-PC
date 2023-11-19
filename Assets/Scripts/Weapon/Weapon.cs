@@ -59,8 +59,17 @@ public class Weapon : MonoBehaviour
 
     private void SetupWeapon()
     {
+        EventController.current.onPlayerWeaponPickup += DropWeapon;
+
         Ammo = weaponData.ammo;
         FireRate = weaponData.fireRate;
         IsAutomatic = weaponData.isAutomatic;
     }
+
+    private void DropWeapon(GameObject weaponName)
+    {
+        EventController.current.onPlayerWeaponPickup -= DropWeapon;
+        Destroy(gameObject);
+    }
+
 }

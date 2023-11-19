@@ -20,6 +20,11 @@ public class FireBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // To-Do
+        // Implement with ammo. Pistol - Unlimited Ammo, Assault Rifle - 40 ammo, Shotgun - 12 ammo
+        // Implement ammo that decreases for every fire
+        // If the current weapon is an Assault rifle or a Shotgun, replace it with a pistol when ammo is empty
+
         // Check if the weapon is automatic
         switch (weapon.IsAutomatic)
         {

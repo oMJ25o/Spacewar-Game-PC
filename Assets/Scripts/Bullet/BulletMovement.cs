@@ -30,7 +30,7 @@ public class BulletMovement : MonoBehaviour
 
     private void Movement()
     {
-        Weapon = GameObject.Find("Weapon");
+        Weapon = GameObject.Find("Weapon Equipped");
         bulletRb.AddForce(Weapon.transform.right * speed, ForceMode2D.Impulse); // Instant force towards the target point
     }
 

@@ -10,6 +10,7 @@ public class EventController : MonoBehaviour
     public event Action onPlayerRoll;
     public event Action onPlayerRotate;
     public event Action<int> onEnemyHit;
+    public event Action<GameObject> onPlayerWeaponPickup;
 
     void Awake()
     {
@@ -43,6 +44,14 @@ public class EventController : MonoBehaviour
         if (onEnemyHit != null)
         {
             onEnemyHit(dmg);
+        }
+    }
+
+    public void PlayerWeaponPickup(GameObject weaponName)
+    {
+        if (onPlayerWeaponPickup != null)
+        {
+            onPlayerWeaponPickup(weaponName);
         }
     }
 
