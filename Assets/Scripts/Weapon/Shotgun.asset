@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b62978775feeb44ac189ce64fad5de, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  ammo: 12
-  fireRate: 0.6
+  ammo: 8
+  fireRate: 0.7
   isAutomatic: 0

@@ -6,13 +6,13 @@ using UnityEngine;
 public class FireBullet : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Vector3[] yOffSet;
     [SerializeField] private GameObject firePoint;
+    private Vector3 yOffSet;
     private GameObject weaponParent;
     private Weapon weapon;
     private bool canFire = true;
     private Rigidbody2D bulletRb;
-    private int shotgunBulletPerFire = 3;
+    private int shotgunBulletPerFire = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,17 +68,25 @@ public class FireBullet : MonoBehaviour
             {
                 bulletRb = Instantiate(bulletPrefab, firePoint.transform.position, bulletPrefab.transform.rotation).GetComponent<Rigidbody2D>();
                 BulletMovement bulletMovement = bulletRb.gameObject.GetComponent<BulletMovement>();
-
+                float x = Random.Range(-6f, 6f);
+                float y = Random.Range(-5f, 5f);
+                yOffSet = new Vector2(x, y);
                 switch (i)
                 {
                     case 0:
-                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet[i], ForceMode2D.Impulse);
+                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet, ForceMode2D.Impulse);
                         break;
                     case 1:
-                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet[i], ForceMode2D.Impulse);
+                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet, ForceMode2D.Impulse);
                         break;
                     case 2:
-                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet[i], ForceMode2D.Impulse);
+                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet, ForceMode2D.Impulse);
+                        break;
+                    case 3:
+                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet, ForceMode2D.Impulse);
+                        break;
+                    case 4:
+                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet, ForceMode2D.Impulse);
                         break;
                 }
             }

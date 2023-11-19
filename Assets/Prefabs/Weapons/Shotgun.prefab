@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2934084791883636944, guid: 4c981f729a23fb94a939009644152747, type: 3}
   yOffSet:
-  - {x: 0, y: 5, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: -5, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   firePoint: {fileID: 959064708781741091}
