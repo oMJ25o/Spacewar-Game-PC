@@ -6,9 +6,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField]
-    private int moveSpeed;
+    [SerializeField] private int moveSpeed;
     private int rollSpeed = 1;
+    private Rigidbody2D playerRb;
+    private float horizontal;
+    private float vertical;
 
     // To-Do
     // Make a different class for picking up weapons
@@ -48,19 +50,23 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        playerRb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
         DirectionalMovement();
     }
 
     // Player movement based on WASD input actions
     private void DirectionalMovement()
     {
-        gameObject.transform.Translate(Vector2.right * (Input.GetAxisRaw("Horizontal") * rollSpeed) * moveSpeed * Time.deltaTime);
-        gameObject.transform.Translate(Vector2.up * (Input.GetAxisRaw("Vertical") * rollSpeed) * moveSpeed * Time.deltaTime);
+        // gameObject.transform.Translate(Vector2.right * (Input.GetAxisRaw("Horizontal") * rollSpeed) * moveSpeed * Time.deltaTime);
+        // gameObject.transform.Translate(Vector2.up * (Input.GetAxisRaw("Vertical") * rollSpeed) * moveSpeed * Time.deltaTime);
+
+        playerRb.velocity = new Vector2(horizontal * moveSpeed * rollSpeed, vertical * moveSpeed * rollSpeed);
     }
 }

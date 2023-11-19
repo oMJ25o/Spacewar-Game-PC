@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Roll : MonoBehaviour
 {
-    [SerializeField]
-    private int rollSpeedValue;
+    [SerializeField] private int rollSpeedValue;
+    private GameObject weaponParent;
     // Start is called before the first frame update
     void Start()
     {
         EventController.current.onPlayerRoll += PlayerRoll; //Subscribes the PlayerRoll function to the onPlayerRoll event
+        weaponParent = GameObject.Find("Weapon Equipped");
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class Roll : MonoBehaviour
     {
         gameObject.GetComponent<Movement>().RollSpeed = rollSpeedValue;
         gameObject.GetComponent<Animator>().SetBool("isRollPressed", true); // Sets the bool parameter of the animation to run the roll animation
+        weaponParent.SetActive(false);
     }
 
     // Setting all the values back from normal after roll animation
@@ -33,6 +35,7 @@ public class Roll : MonoBehaviour
     {
         gameObject.GetComponent<Movement>().RollSpeed = 1;
         gameObject.GetComponent<Animator>().SetBool("isRollPressed", false); // Sets the bool parameter of the animation to run back to the idle animation
+        weaponParent.SetActive(true);
     }
 
 }

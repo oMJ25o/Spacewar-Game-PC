@@ -9,8 +9,8 @@ public class FollowPlayer : MonoBehaviour
     private int zPosSet = -10;
     public float damping;
 
-    private float xBorderPos = 51;
-    private float yBorderPos = 39;
+    private float xBorderPos = 49;
+    private float yBorderPos = 38;
 
     private Vector3 velocity = Vector3.zero;
     // Finds the player game object at the start of the game scene
@@ -31,7 +31,7 @@ public class FollowPlayer : MonoBehaviour
     private void Follow()
     {
         // Smoothly move the camera's position towards the player's position
-        transform.position = Vector3.SmoothDamp(new Vector3(transform.position.x, transform.position.y, zPosSet), player.transform.position, ref velocity, damping);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, zPosSet);
 
         if (transform.position.x < -xBorderPos)
         {

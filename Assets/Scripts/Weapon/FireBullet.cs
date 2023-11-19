@@ -18,6 +18,7 @@ public class FireBullet : MonoBehaviour
     {
         weaponParent = GameObject.Find("Weapon Equipped");
         weapon = GetComponent<Weapon>();
+        canFire = true;
     }
 
     // Update is called once per frame
@@ -46,6 +47,11 @@ public class FireBullet : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    private void OnEnable()
+    {
+        canFire = true;
     }
 
     private void SpawnBullet()
