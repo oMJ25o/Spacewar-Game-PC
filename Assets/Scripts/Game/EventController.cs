@@ -11,6 +11,7 @@ public class EventController : MonoBehaviour
     public event Action onPlayerRotate;
     public event Action<int> onEnemyHit;
     public event Action<GameObject> onPlayerWeaponPickup;
+    public event Action onPlayerWeaponFire;
 
     void Awake()
     {
@@ -54,5 +55,14 @@ public class EventController : MonoBehaviour
             onPlayerWeaponPickup(weaponName);
         }
     }
+
+    public void PlayerWeaponFire()
+    {
+        if (onPlayerWeaponFire != null)
+        {
+            onPlayerWeaponFire();
+        }
+    }
+
 
 }

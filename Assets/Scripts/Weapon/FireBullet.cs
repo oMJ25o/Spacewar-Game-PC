@@ -92,6 +92,7 @@ public class FireBullet : MonoBehaviour
             }
         }
 
+        EventController.current.PlayerWeaponFire();
         // Makes the weapon not firing too fast
         canFire = false;
         StartCoroutine(FireDelay());

@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4767946182989448099}
   m_Layer: 0
   m_Name: Shotgun
-  m_TagString: Untagged
+  m_TagString: Shotgun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 39998f6e31f13e547bf514f1abdcf71e, type: 2}
+  pistolPrefab: {fileID: 1465844625362561673, guid: 0af6171a98ef6de4aaee354a8aa73356, type: 3}
 --- !u!114 &4767946182989448099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,8 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2934084791883636944, guid: 4c981f729a23fb94a939009644152747, type: 3}
-  yOffSet:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
   firePoint: {fileID: 959064708781741091}

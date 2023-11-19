@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private WeaponData weaponData;
+    [SerializeField] private GameObject pistolPrefab;
     public int Ammo
     {
         get { return ammo; }
@@ -44,6 +45,7 @@ public class Weapon : MonoBehaviour
     private int ammo;
     private float fireRate;
     private bool isAutomatic;
+    private GameObject weaponParent;
 
     // Start is called before the first frame update
     void Start()
@@ -60,16 +62,38 @@ public class Weapon : MonoBehaviour
     private void SetupWeapon()
     {
         EventController.current.onPlayerWeaponPickup += DropWeapon;
+        EventController.current.onPlayerWeaponFire += DecreaseCurrentAmmo;
 
-        Ammo = weaponData.ammo;
-        FireRate = weaponData.fireRate;
-        IsAutomatic = weaponData.isAutomatic;
+        ammo = weaponData.ammo;
+        fireRate = weaponData.fireRate;
+        isAutomatic = weaponData.isAutomatic;
+        weaponParent = GameObject.Find("Weapon Equipped");
     }
 
     private void DropWeapon(GameObject weaponName)
     {
         EventController.current.onPlayerWeaponPickup -= DropWeapon;
+        EventController.current.onPlayerWeaponFire -= DecreaseCurrentAmmo;
         Destroy(gameObject);
+    }
+
+    private void DecreaseCurrentAmmo()
+    {
+        if (!gameObject.CompareTag("Pistol"))
+        {
+            ammo--;
+        }
+
+        if (ammo == 0)
+        {
+            ReplaceWeaponToDefault();
+        }
+    }
+
+    private void ReplaceWeaponToDefault()
+    {
+        Instantiate(pistolPrefab, weaponParent.transform);
+        DropWeapon(pistolPrefab);
     }
 
 }

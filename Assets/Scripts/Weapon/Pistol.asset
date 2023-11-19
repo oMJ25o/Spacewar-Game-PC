@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b62978775feeb44ac189ce64fad5de, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  ammo: 0
+  ammo: 2
   fireRate: 0.45
   isAutomatic: 0

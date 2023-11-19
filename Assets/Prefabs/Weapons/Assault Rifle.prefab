@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8023614295100846891}
   m_Layer: 0
   m_Name: Assault Rifle
-  m_TagString: Untagged
+  m_TagString: Assault Rifle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: b393fc18572d15c46a23a32f3a8b063d, type: 2}
+  pistolPrefab: {fileID: 1465844625362561673, guid: 0af6171a98ef6de4aaee354a8aa73356, type: 3}
 --- !u!114 &8023614295100846891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2934084791883636944, guid: 4c981f729a23fb94a939009644152747, type: 3}
-  yOffSet: []
   firePoint: {fileID: 8980678789218969157}
 --- !u!1 &8980678789218969157
 GameObject:

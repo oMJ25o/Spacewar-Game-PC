@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1729979113460090116}
   m_Layer: 0
   m_Name: Pistol
-  m_TagString: Untagged
+  m_TagString: Pistol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 84bccc104e7d654489d085f2620aca02, type: 2}
+  pistolPrefab: {fileID: 0}
 --- !u!114 &1729979113460090116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2934084791883636944, guid: 4c981f729a23fb94a939009644152747, type: 3}
-  yOffSet: []
   firePoint: {fileID: 1554000570374011797}
 --- !u!1 &1554000570374011797
 GameObject:
