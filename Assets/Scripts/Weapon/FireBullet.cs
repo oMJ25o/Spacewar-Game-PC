@@ -6,14 +6,17 @@ using UnityEngine;
 public class FireBullet : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
-
-    private GameObject firePoint;
+    [SerializeField] private Vector3[] yOffSet;
+    [SerializeField] private GameObject firePoint;
+    private GameObject weaponParent;
     private Weapon weapon;
     private bool canFire = true;
+    private Rigidbody2D bulletRb;
+    private int shotgunBulletPerFire = 3;
     // Start is called before the first frame update
     void Start()
     {
-        firePoint = GameObject.Find("Fire Point"); // Find the Fire Point to spawn the bullet
+        weaponParent = GameObject.Find("Weapon Equipped");
         weapon = GetComponent<Weapon>();
     }
 
@@ -47,7 +50,33 @@ public class FireBullet : MonoBehaviour
 
     private void SpawnBullet()
     {
-        Instantiate(bulletPrefab, firePoint.transform.position, bulletPrefab.transform.rotation);
+        if (gameObject.name != "Shotgun(Clone)")
+        {
+            bulletRb = Instantiate(bulletPrefab, firePoint.transform.position, bulletPrefab.transform.rotation).GetComponent<Rigidbody2D>();
+            BulletMovement bulletMovement = bulletRb.gameObject.GetComponent<BulletMovement>();
+            bulletRb.AddForce(weaponParent.transform.right * bulletMovement.Speed, ForceMode2D.Impulse);
+        }
+        else if (gameObject.name == "Shotgun(Clone)")
+        {
+            for (int i = 0; i < shotgunBulletPerFire; i++)
+            {
+                bulletRb = Instantiate(bulletPrefab, firePoint.transform.position, bulletPrefab.transform.rotation).GetComponent<Rigidbody2D>();
+                BulletMovement bulletMovement = bulletRb.gameObject.GetComponent<BulletMovement>();
+
+                switch (i)
+                {
+                    case 0:
+                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet[i], ForceMode2D.Impulse);
+                        break;
+                    case 1:
+                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet[i], ForceMode2D.Impulse);
+                        break;
+                    case 2:
+                        bulletRb.AddForce((weaponParent.transform.right * bulletMovement.Speed) + yOffSet[i], ForceMode2D.Impulse);
+                        break;
+                }
+            }
+        }
 
         // Makes the weapon not firing too fast
         canFire = false;

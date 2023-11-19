@@ -27,6 +27,9 @@ public class WeaponPickup : MonoBehaviour
             case "Assault Rifle":
                 Instantiate(weaponPrefabs[0], weaponParent.transform);
                 break;
+            case "Shotgun":
+                Instantiate(weaponPrefabs[1], weaponParent.transform);
+                break;
         }
     }
 

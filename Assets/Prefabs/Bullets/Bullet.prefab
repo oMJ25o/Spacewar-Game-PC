@@ -114,7 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletRb: {fileID: 5286709026727909647}
-  speed: 35
+  speed: 30
+  weapon: {fileID: 0}
 --- !u!50 &5286709026727909647
 Rigidbody2D:
   serializedVersion: 4

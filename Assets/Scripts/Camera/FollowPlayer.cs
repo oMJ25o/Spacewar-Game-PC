@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
@@ -7,6 +8,9 @@ public class FollowPlayer : MonoBehaviour
     private GameObject player;
     private int zPosSet = -10;
     public float damping;
+
+    private float xBorderPos = 51;
+    private float yBorderPos = 39;
 
     private Vector3 velocity = Vector3.zero;
     // Finds the player game object at the start of the game scene
@@ -28,6 +32,25 @@ public class FollowPlayer : MonoBehaviour
     {
         // Smoothly move the camera's position towards the player's position
         transform.position = Vector3.SmoothDamp(new Vector3(transform.position.x, transform.position.y, zPosSet), player.transform.position, ref velocity, damping);
+
+        if (transform.position.x < -xBorderPos)
+        {
+            transform.position = new Vector3(-xBorderPos, transform.position.y, transform.position.z);
+        }
+        else if (transform.position.x > xBorderPos)
+        {
+            transform.position = new Vector3(xBorderPos, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.y < -yBorderPos)
+        {
+            transform.position = new Vector3(transform.position.x, -yBorderPos, transform.position.z);
+        }
+        else if (transform.position.y > yBorderPos)
+        {
+            transform.position = new Vector3(transform.position.x, yBorderPos, transform.position.z);
+        }
+
     }
 
 }

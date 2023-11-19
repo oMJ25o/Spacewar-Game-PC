@@ -8,30 +8,23 @@ public class BulletMovement : MonoBehaviour
 
     [SerializeField]
     private int speed;
-
-    private GameObject Weapon;
     public int Speed // Bullet Movement Speed Get Property
     {
         get { return speed; }
     }
 
+    [HideInInspector] public GameObject weapon;
 
     // Start is called before the first frame update
     void Start()
     {
-        Movement();
+        weapon = GameObject.Find("Weapon Equipped");
     }
 
     // Update is called once per frame
     void Update()
     {
 
-    }
-
-    private void Movement()
-    {
-        Weapon = GameObject.Find("Weapon Equipped");
-        bulletRb.AddForce(Weapon.transform.right * speed, ForceMode2D.Impulse); // Instant force towards the target point
     }
 
     private void OnBecameInvisible()
