@@ -48,11 +48,11 @@ public class EventController : MonoBehaviour
         }
     }
 
-    public void PlayerWeaponPickup(GameObject weaponName)
+    public void PlayerWeaponPickup(GameObject weaponTag)
     {
         if (onPlayerWeaponPickup != null)
         {
-            onPlayerWeaponPickup(weaponName);
+            onPlayerWeaponPickup(weaponTag);
         }
     }
 

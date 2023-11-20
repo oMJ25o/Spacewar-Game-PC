@@ -11,6 +11,8 @@ TagManager:
   - Pistol
   - Assault Rifle
   - Shotgun
+  - Pickup(Shotgun)
+  - Pickup(AR)
   layers:
   - Default
   - TransparentFX

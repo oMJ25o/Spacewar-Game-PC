@@ -12,10 +12,6 @@ public class Movement : MonoBehaviour
     private float horizontal;
     private float vertical;
 
-    // To-Do
-    // Make a different class for picking up weapons
-    // Pistol will be the permanent weapon
-
     public int MoveSpeed // Get and Set property for movement speed
     {
         get { return moveSpeed; }
@@ -64,9 +60,6 @@ public class Movement : MonoBehaviour
     // Player movement based on WASD input actions
     private void DirectionalMovement()
     {
-        // gameObject.transform.Translate(Vector2.right * (Input.GetAxisRaw("Horizontal") * rollSpeed) * moveSpeed * Time.deltaTime);
-        // gameObject.transform.Translate(Vector2.up * (Input.GetAxisRaw("Vertical") * rollSpeed) * moveSpeed * Time.deltaTime);
-
         playerRb.velocity = new Vector2(horizontal * moveSpeed * rollSpeed, vertical * moveSpeed * rollSpeed);
     }
 }

@@ -20,14 +20,14 @@ public class WeaponPickup : MonoBehaviour
 
     }
 
-    private void EquipNewWeapon(GameObject weaponName)
+    private void EquipNewWeapon(GameObject weaponTag)
     {
-        switch (weaponName.name)
+        switch (weaponTag.tag)
         {
-            case "Assault Rifle":
+            case "Pickup(AR)":
                 Instantiate(weaponPrefabs[0], weaponParent.transform);
                 break;
-            case "Shotgun":
+            case "Pickup(Shotgun)":
                 Instantiate(weaponPrefabs[1], weaponParent.transform);
                 break;
         }
@@ -35,7 +35,7 @@ public class WeaponPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Pickup"))
+        if (other.gameObject.CompareTag("Pickup(Shotgun)") || other.gameObject.CompareTag("Pickup(AR)"))
         {
             EventController.current.PlayerWeaponPickup(other.gameObject);
             Destroy(other.gameObject);

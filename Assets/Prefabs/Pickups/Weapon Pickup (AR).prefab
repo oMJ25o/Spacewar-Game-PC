@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 4118129060463871021}
   m_Layer: 0
   m_Name: Weapon Pickup (AR)
-  m_TagString: Pickup
+  m_TagString: Pickup(AR)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
